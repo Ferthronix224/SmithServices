@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/serviceFragment">
+    <fragment
+        android:id="@+id/serviceFragment"
+        android:name="com.example.demo.ui.main.ServiceFragment"
+        android:label="fragment_service"
+        tools:layout="@layout/fragment_service" >
+        <action
+            android:id="@+id/action_serviceFragment_to_serviceDetailFragment"
+            app:destination="@id/serviceDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/serviceDetailFragment"
+        android:name="com.example.demo.ui.detail.ServiceDetailFragment"
+        android:label="fragment_service_detail"
+        tools:layout="@layout/fragment_service_detail" >
+        <argument
+            android:name="posterImageUrl"
+            app:argType="string" />
+        <argument
+            android:name="backgroundImageUrl"
+            app:argType="string" />
+        <argument
+            android:name="address"
+            app:argType="string" />
+        <argument
+            android:name="number"
+            app:argType="string" />
+        <argument
+            android:name="ciudad"
+            app:argType="string" />
+        <argument android:name="createdDate"
+            app:argType="string" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+</navigation>
