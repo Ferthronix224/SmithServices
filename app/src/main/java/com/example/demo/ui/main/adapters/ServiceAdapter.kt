@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.demo.core.BaseViewHolder
 import com.example.demo.data.model.Service
-import com.example.demo.databinding.MovieItemBinding
+import com.example.demo.databinding.ServiceItemBinding
 
 class ServiceAdapter(
     private val servicesList: List<Service>,
@@ -20,7 +20,7 @@ class ServiceAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
-        val itemBinding = MovieItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val itemBinding = ServiceItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         val holder = ServicesViewHolder(itemBinding, parent.context)
 
         itemBinding.root.setOnClickListener {
@@ -41,8 +41,8 @@ class ServiceAdapter(
     override fun getItemCount(): Int = servicesList.size
 
     private inner class ServicesViewHolder(
-            val binding: MovieItemBinding,
-            val context: Context
+        val binding: ServiceItemBinding,
+        val context: Context
     ) : BaseViewHolder<Service>(binding.root) {
         override fun bind(item: Service) {
             Glide.with(context).load(item.poster_path).centerCrop().into(binding.imgService)

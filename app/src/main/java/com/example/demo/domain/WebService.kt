@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
 interface WebService {
-    @GET("servicios-medicos.json")
+    @GET("servicios_medicos.json")
     suspend fun getServiciosMedicos(): ServiceList
 
     @GET("policia.json")

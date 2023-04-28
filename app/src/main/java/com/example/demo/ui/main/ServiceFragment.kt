@@ -42,14 +42,14 @@ class ServiceFragment : Fragment(R.layout.fragment_service), ServiceAdapter.OnSe
                 is Resource.Success -> {
                     binding.progressBar.visibility = View.GONE
                     concatAdapter.apply {
-                        addAdapter(0, ServiciosMedicosConcatAdapter(ServiceAdapter(it.data.results,this@ServiceFragment)))
-                        addAdapter(1, PoliciaConcatAdapter(ServiceAdapter(it.data.results,this@ServiceFragment)))
-                        addAdapter(2, RestaurantesConcatAdapter(ServiceAdapter(it.data.results,this@ServiceFragment)))
-                        addAdapter(3, GasolinerasConcatAdapter(ServiceAdapter(it.data.results,this@ServiceFragment)))
-                        addAdapter(4, MantenimientoConcatAdapter(ServiceAdapter(it.data.results,this@ServiceFragment)))
-                        addAdapter(5, LimpiezaConcatAdapter(ServiceAdapter(it.data.results,this@ServiceFragment)))
-                        addAdapter(6, VulcanizadoraConcatAdapter(ServiceAdapter(it.data.results,this@ServiceFragment)))
-                        addAdapter(7, FerreteriasConcatAdapter(ServiceAdapter(it.data.results,this@ServiceFragment)))
+                        addAdapter(0, ServiciosMedicosConcatAdapter(ServiceAdapter(it.data.first.results,this@ServiceFragment)))
+                        addAdapter(1, PoliciaConcatAdapter(ServiceAdapter(it.data.second.results,this@ServiceFragment)))
+                        addAdapter(2, RestaurantesConcatAdapter(ServiceAdapter(it.data.third.results,this@ServiceFragment)))
+                        addAdapter(3, GasolinerasConcatAdapter(ServiceAdapter(it.data.fourth.results,this@ServiceFragment)))
+                        addAdapter(4, MantenimientoConcatAdapter(ServiceAdapter(it.data.fifth.results,this@ServiceFragment)))
+                        addAdapter(5, LimpiezaConcatAdapter(ServiceAdapter(it.data.sixth.results,this@ServiceFragment)))
+                        addAdapter(6, VulcanizadoraConcatAdapter(ServiceAdapter(it.data.seventh.results,this@ServiceFragment)))
+                        addAdapter(7, FerreteriasConcatAdapter(ServiceAdapter(it.data.eighth.results,this@ServiceFragment)))
 
                     }
                     binding.rvServices.adapter = concatAdapter
